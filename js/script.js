@@ -46,6 +46,26 @@ function carregarProdutos() {
     }
 }
 
+//Salva o produto
+function save() {
+
+    var prod = {
+        id: produtos.length + 1, 
+        nome: document.getElementById("inputNome").value, 
+        descricao: document.getElementById("inputDescricao").value, 
+        preco: document.getElementById("inputPreco").value, 
+        categoria: document.getElementById("selectCategoria").value, 
+        promocao: document.getElementById("CheckBoxPromocao").checked, 
+        novo: document.getElementById("CheckBoxNovoProduto").checked
+    };
+
+    adicionarNovaLinha(prod);
+    produtos.push(prod);
+
+    document.getElementById("formProduto").reset();
+
+}
+
 //Adiciona nova linha
 function adicionarNovaLinha(prod) {
     var table = document.getElementById("produtosTable");
